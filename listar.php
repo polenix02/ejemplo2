@@ -62,7 +62,7 @@ $results = pg_query($con, $sql);
                 while($row = pg_fetch_row($results)){
               ?>
                 <tr>
-                    <td> <?php echo $row[0] ?> </td>
+                    <td> <?php echo $row[0] ;?> </td>
                 </tr>
                 <?php
                   }
