@@ -1,3 +1,13 @@
+<?php
+include("conexion.php");
+$con = conexion();
+
+$sql = "select * from persona";
+$results = pg_query($con, $sql);
+
+?>
+
+
 <!doctype html>
 <html lang="es">
   <head>
@@ -48,9 +58,15 @@
             </thead>
 
             <tbody>
+              <?php
+                foreach($results as $result){
+              ?>
                 <tr>
-                    <td>Paul</td>
+                    <td> <?php echo $result-> idpersona ?> </td>
                 </tr>
+                <?php
+                  }
+                ?>
             </tbody>
             
         </table>
