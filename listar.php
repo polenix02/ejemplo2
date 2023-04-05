@@ -59,10 +59,10 @@ $results = pg_query($con, $sql);
 
             <tbody>
               <?php
-                foreach($results as $result){
+                while($row = pg_fetch_row($results)){
               ?>
                 <tr>
-                    <td> <?php echo $result-> idpersona ?> </td>
+                    <td> <?php echo $row[0] ?> </td>
                 </tr>
                 <?php
                   }
